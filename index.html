@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visitas al Bernabéu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Skip link para accesibilidad -->
+  <a href="#main" class="skip-link">Ir al contenido principal</a>
+
+  <header>
+    <nav aria-label="Navegación principal">
+      <ul>
+        <li><button data-target="inicio">Inicio</button></li>
+        <li><button data-target="video">Tour</button></li>
+        <li><button data-target="postal">Enviar postal</button></li>
+        <li><button data-target="contacto">Contacto</button></li>
+        <li><button data-target="ayuda">Ayuda</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Sección Inicio (visible por defecto) -->
+    <section id="inicio" class="active" tabindex="-1" role="region" aria-labelledby="titulo-inicio">
+      <h1 id="titulo-inicio">Bienvenido al Estadio Santiago Bernabéu</h1>
+      <p>Descubre la historia y visita nuestros espacios más emblemáticos.</p>
+      <div class="audio-container">
+        <!-- Audio ambiente con control y texto alternativo -->
+        <audio id="himno-audio" controls>
+          <source src="audio/Hala Madrid y Nada Mas.mp3" type="audio/mpeg">
+          Tu navegador no soporta audio.
+        </audio>
+        <button id="mostrar-letra" aria-expanded="false" aria-controls="letra-himno">Mostrar letra del himno</button>
+        
+        <div id="letra-himno" class="hidden" aria-live="polite">
+          <h3>Letra de "Hala Madrid y Nada Más"</h3>
+          <div class="letra-contenido">
+            <p>Historia que tú hiciste,<br>
+            historia por hacer<br>
+            porque nadie resiste<br>
+            tus ganas de vencer.</p>
+            
+            <p>Ya salen las estrellas<br>
+            mi viejo Chamartín<br>
+            de lejos y de cerca<br>
+            nos traes hasta aquí.</p>
+            
+            <p>Llevo tu camiseta<br>
+            pegada al corazón,<br>
+            los días que tú juegas<br>
+            son todo lo que soy.</p>
+            
+            <p>Ya corre La Saeta,<br>
+            ya ataca mi Madrid<br>
+            soy lucha, soy belleza<br>
+            el grito que aprendí.</p>
+            
+            <p>Madrid, Madrid, Madrid<br>
+            ¡HALA MADRID!<br>
+            y nada más,<br>
+            y nada más<br>
+            ¡HALA MADRID!</p>
+
+            <p>Historia que tú hiciste,<br>
+            historia por hacer<br>
+            porque nadie resiste<br>
+            tus ganas de vencer.</p>
+            
+            <p>Ya salen las estrellas<br>
+            mi viejo Chamartín<br>
+            de lejos y de cerca<br>
+            nos traes hasta aquí.</p>
+
+            <p>Madrid, Madrid, Madrid<br>
+            ¡HALA MADRID!<br>
+            y nada más,<br>
+            y nada más<br>
+            ¡HALA MADRID!</p>
+          </div>
+        </div>
+      </div>
+      <img 
+        src="/images/fachada.jpg" 
+        alt="Fachada del Estadio Santiago Bernabéu" />
+    </section>
+
+    <!-- Sección Tour 360° -->
+    <section id="video" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-multimedia">
+      <h2 id="titulo-multimedia">Tour Santiago Bernabéu</h2>
+      <!-- Video con subtítulos para accesibilidad -->
+      <video controls width="640">
+        <source src="video/tour.mp4" type="video/mp4">
+        <track kind="subtitles" src="video/subs_es.vtt" srclang="es" label="Español">
+        Tu navegador no soporta video.
+      </video>
+    </section>
+
+    <!-- Sección Enviar postal -->
+    <section id="postal" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-postal">
+      <h2 id="titulo-postal">Enviar una postal</h2>
+      <form id="form-postal">
+        <fieldset>
+          <legend>Elige una imagen:</legend>
+          <label>
+            <input type="radio" name="imagen" value="interior" required>
+            <img src="images/interior.jpg" alt="Interior del estadio" />
+          </label>
+          <label>
+            <input type="radio" name="imagen" value="fachada">
+            <img src="images/fachada.jpg" alt="Fachada moderna del estadio" />
+          </label>
+          <label>
+            <input type="radio" name="imagen" value="campo">
+            <img src="images/campo.jpg" alt="Vista aérea del campo de juego" />
+          </label>
+        </fieldset>
+        <button type="submit">Enviar postal</button>
+      </form>
+      <!-- Mensaje dinámico de confirmación -->
+       <br>
+      <div id="mensaje-postal" role="alert" aria-live="polite" class="hidden"></div>
+    </section>
+
+    <!--  Contacto -->
+    <section id="contacto" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Contacto</h2>
+      <p>¿Tienes dudas? Escríbenos a <a href="mailto:info@bernabeu.com">info@bernabeu.com</a></p>
+    </section>
+    
+    <!-- Nueva sección de Ayuda -->
+    <section id="ayuda" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-ayuda">
+      <h2 id="titulo-ayuda">Ayuda y Accesibilidad</h2>
+      
+      <h3>Navegación por teclado</h3>
+      <ul>
+        <li><strong>Tab</strong>: Navegar entre elementos interactivos de la página</li>
+        <li><strong>Enter/Espacio</strong>: Activar botones o enlaces seleccionados</li>
+        <li><strong>Alt+1</strong>: Ir a Inicio</li>
+        <li><strong>Alt+2</strong>: Ir al Tour</li>
+        <li><strong>Alt+3</strong>: Ir a Enviar postal</li>
+        <li><strong>Alt+4</strong>: Ir a Contacto</li>
+        <li><strong>Alt+5</strong>: Ir a Ayuda</li>
+      </ul>
+      
+      <h3>Contenido multimedia</h3>
+      <p>Todos nuestros videos incluyen subtítulos. Para el audio del himno del Real Madrid, puede mostrar la letra completa pulsando el botón "Mostrar letra del himno".</p>
+      
+      <h3>Formularios</h3>
+      <p>El formulario para enviar postales es totalmente accesible mediante teclado. Utilice las teclas Tab para navegar entre opciones y Espacio para seleccionar una imagen.</p>
+      
+      <h3>Compatibilidad con lectores de pantalla</h3>
+      <p>Esta web es compatible con los principales lectores de pantalla como JAWS, NVDA y VoiceOver.</p>
+    </section>
+  </main>
+
+  <footer>
+    <img src="/images/wcag-aa.png" alt="WCAG 2.2 Nivel AA alcanzado" />
+    <p>&copy; 2025 Bernabéu Tours</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+/* 1. Evita scroll vertical y define fuente base accesible */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #222;
+}
+
+/* 2. Skip link oculto hasta que recibe foco */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* 3. Cabecera fija y navegación clara */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #004080;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 10px;
+}
+nav li {
+    margin-right: 1rem;
+}
+nav button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px;
+}
+nav button:focus,
+nav button:hover {
+    text-decoration: underline;
+    outline: 2px solid #ff0;
+}
+
+/* 4. Secciones de viewport completo */
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-top: 50px;
+}
+section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 50px);
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+/* Clase hidden general - corregido */
+.hidden {
+    display: none !important;
+}
+
+section.active {
+    display: block;
+}
+
+/* 5. Visibilidad de foco */
+:focus {
+    outline: 3px solid #005bb5;
+    outline-offset: 2px;
+}
+
+/* 6. Formulario postal accesible */
+form fieldset {
+    border: 2px solid #333;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+form img {
+    width: 100px;
+    height: auto;
+    display: block;
+}
+button[type="submit"] {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background: #004999;
+}
+
+/* 8. Footer fijo */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #004080;
+    color: #fff;
+    text-align: center;
+    padding: 0.5rem;
+}
+footer img {
+    width: 50px;
+    vertical-align: middle;
+}
+
+/* 9. Estilos para la letra del himno */
+.audio-container {
+    margin: 1rem 0;
+}
+
+#mostrar-letra {
+    margin-left: 1rem;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#mostrar-letra:hover,
+#mostrar-letra:focus {
+    background-color: #004999;
+}
+
+#letra-himno {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-left: 4px solid #004080;
+    max-width: 600px;
+}
+
+.letra-contenido {
+    line-height: 1.6;
+}
+
+/* 10. Estilos para la página de ayuda */
+#ayuda h3 {
+    margin-top: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+}
+
+#ayuda ul {
+    line-height: 1.8;
+}
