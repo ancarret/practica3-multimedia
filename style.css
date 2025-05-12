@@ -1,15 +1,14 @@
-/* 1. Evita scroll vertical y define fuente base accesible */
 html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     font-family: Arial, sans-serif;
     font-size: 1rem;
     background-color: #fff;
     color: #222;
 }
 
-/* 2. Skip link oculto hasta que recibe foco */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -23,7 +22,6 @@ html, body {
     top: 0;
 }
 
-/* 3. Cabecera fija y navegación clara */
 header {
     position: fixed;
     top: 0;
@@ -53,7 +51,6 @@ nav button:hover {
     outline: 2px solid #ff0;
 }
 
-/* 4. Secciones de viewport completo */
 main {
     position: relative;
     width: 100%;
@@ -71,7 +68,6 @@ section {
     overflow: auto;
 }
 
-/* Clase hidden general - corregido */
 .hidden {
     display: none !important;
 }
@@ -80,13 +76,11 @@ section.active {
     display: block;
 }
 
-/* 5. Visibilidad de foco */
 :focus {
     outline: 3px solid #005bb5;
     outline-offset: 2px;
 }
 
-/* 6. Formulario postal accesible */
 form fieldset {
     border: 2px solid #333;
     padding: 1rem;
@@ -111,7 +105,6 @@ button[type="submit"]:focus {
     background: #004999;
 }
 
-/* 8. Footer fijo */
 footer {
     position: fixed;
     bottom: 0;
@@ -126,7 +119,6 @@ footer img {
     vertical-align: middle;
 }
 
-/* 9. Estilos para la letra del himno */
 .audio-container {
     margin: 1rem 0;
 }
@@ -158,7 +150,6 @@ footer img {
     line-height: 1.6;
 }
 
-/* 10. Estilos para la página de ayuda */
 #ayuda h3 {
     margin-top: 1.5rem;
     border-bottom: 1px solid #ccc;
