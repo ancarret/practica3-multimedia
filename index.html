@@ -71,15 +71,11 @@
 
     <section id="video" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-multimedia">
       <h2 id="titulo-multimedia">Tour Santiago Bernabéu</h2>
-      <iframe 
-        width="640" 
-        height="360" 
-        src="https://www.youtube.com/embed/YOUR-VIDEO-ID" 
-        title="Tour Santiago Bernabéu" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen>
-      </iframe>
+      <video controls width="640">
+        <source src="video/tour.mp4" type="video/mp4">
+        <track kind="subtitles" src="video/subs_es.vtt" srclang="es" label="Español">
+        Tu navegador no soporta video.
+      </video>
     </section>
 
     <section id="postal" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-postal">
@@ -123,6 +119,7 @@
         <li><strong>Alt+3</strong>: Ir a Enviar postal</li>
         <li><strong>Alt+4</strong>: Ir a Contacto</li>
         <li><strong>Alt+5</strong>: Ir a Ayuda</li>
+        <li><strong>Alt+0</strong>: Ir al contenido principal (skip link)</li>
       </ul>
       
       <h3>Contenido multimedia</h3>
@@ -140,10 +137,6 @@
     <img src="images/wcag-aa.png" alt="WCAG 2.2 Nivel AA alcanzado" />
     <p>&copy; 2025 Bernabéu Tours</p>
   </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
 
   <script src="script.js"></script>
 </body>
