@@ -2,13 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('nav button');
     const sections = document.querySelectorAll('main section');
   
-    // Muestra solo la sección con el id especificado
     function showSection(id) {
       sections.forEach(sec => {
         if (sec.id === id) {
           sec.classList.add('active');
           sec.classList.remove('hidden');
-          sec.focus(); // mover foco para accesibilidad
+          sec.focus();
         } else {
           sec.classList.add('hidden');
           sec.classList.remove('active');
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   
-    // Listener para botones de navegación
     buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-target');
@@ -24,12 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // Manejo del envío de postal (simulado)
     const form = document.getElementById('form-postal');
     const mensaje = document.getElementById('mensaje-postal');
   
     form.addEventListener('submit', (e) => {
-      e.preventDefault(); // no recargar la página
+      e.preventDefault();
       const formData = new FormData(form);
       const img = formData.get('imagen');
   
@@ -43,12 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
       mensaje.classList.remove('hidden');
     });
 
-    // Funcionalidad para mostrar/ocultar letra del himno
     const btnLetra = document.getElementById('mostrar-letra');
     const letraHimno = document.getElementById('letra-himno');
     
     if (btnLetra && letraHimno) {
-      // Asegurar que la letra esté oculta inicialmente
       letraHimno.classList.add('hidden');
       
       btnLetra.addEventListener('click', () => {
@@ -66,32 +61,30 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Accesibilidad por teclado - atajos de teclado
     document.addEventListener('keydown', (e) => {
-      // Atajos ALT + número para navegación
       if (e.altKey) {
         switch (e.key) {
-          case '1': // Inicio
+          case '1':
             e.preventDefault();
             showSection('inicio');
             break;
-          case '2': // Tour
+          case '2':
             e.preventDefault();
             showSection('video');
             break;
-          case '3': // Postal
+          case '3':
             e.preventDefault();
             showSection('postal');
             break;
-          case '4': // Contacto
+          case '4':
             e.preventDefault();
             showSection('contacto');
             break;
-          case '5': // Ayuda
+          case '5':
             e.preventDefault();
             showSection('ayuda');
             break;
-          case '0': // Skip to main content
+          case '0':
             e.preventDefault();
             document.querySelector('.skip-link').click();
             break;
