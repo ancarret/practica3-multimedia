@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Skip link para accesibilidad -->
   <a href="#main" class="skip-link">Ir al contenido principal</a>
 
   <header>
@@ -24,12 +23,10 @@
   </header>
 
   <main id="main">
-    <!-- Sección Inicio (visible por defecto) -->
     <section id="inicio" class="active" tabindex="-1" role="region" aria-labelledby="titulo-inicio">
       <h1 id="titulo-inicio">Bienvenido al Estadio Santiago Bernabéu</h1>
       <p>Descubre la historia y visita nuestros espacios más emblemáticos.</p>
       <div class="audio-container">
-        <!-- Audio ambiente con control y texto alternativo -->
         <audio id="himno-audio" controls>
           <source src="audio/Hala Madrid y Nada Mas.mp3" type="audio/mpeg">
           Tu navegador no soporta audio.
@@ -64,22 +61,6 @@
             y nada más,<br>
             y nada más<br>
             ¡HALA MADRID!</p>
-
-            <p>Historia que tú hiciste,<br>
-            historia por hacer<br>
-            porque nadie resiste<br>
-            tus ganas de vencer.</p>
-            
-            <p>Ya salen las estrellas<br>
-            mi viejo Chamartín<br>
-            de lejos y de cerca<br>
-            nos traes hasta aquí.</p>
-
-            <p>Madrid, Madrid, Madrid<br>
-            ¡HALA MADRID!<br>
-            y nada más,<br>
-            y nada más<br>
-            ¡HALA MADRID!</p>
           </div>
         </div>
       </div>
@@ -88,18 +69,19 @@
         alt="Fachada del Estadio Santiago Bernabéu" />
     </section>
 
-    <!-- Sección Tour 360° -->
     <section id="video" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-multimedia">
       <h2 id="titulo-multimedia">Tour Santiago Bernabéu</h2>
-      <!-- Video con subtítulos para accesibilidad -->
-      <video controls width="640">
-        <source src="video/tour.mp4" type="video/mp4">
-        <track kind="subtitles" src="video/subs_es.vtt" srclang="es" label="Español">
-        Tu navegador no soporta video.
-      </video>
+      <iframe 
+        width="640" 
+        height="360" 
+        src="https://www.youtube.com/embed/YOUR-VIDEO-ID" 
+        title="Tour Santiago Bernabéu" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
     </section>
 
-    <!-- Sección Enviar postal -->
     <section id="postal" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-postal">
       <h2 id="titulo-postal">Enviar una postal</h2>
       <form id="form-postal">
@@ -120,18 +102,15 @@
         </fieldset>
         <button type="submit">Enviar postal</button>
       </form>
-      <!-- Mensaje dinámico de confirmación -->
-       <br>
+      <br>
       <div id="mensaje-postal" role="alert" aria-live="polite" class="hidden"></div>
     </section>
 
-    <!--  Contacto -->
     <section id="contacto" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-contacto">
       <h2 id="titulo-contacto">Contacto</h2>
       <p>¿Tienes dudas? Escríbenos a <a href="mailto:info@bernabeu.com">info@bernabeu.com</a></p>
     </section>
     
-    <!-- Nueva sección de Ayuda -->
     <section id="ayuda" class="hidden" tabindex="-1" role="region" aria-labelledby="titulo-ayuda">
       <h2 id="titulo-ayuda">Ayuda y Accesibilidad</h2>
       
@@ -158,9 +137,13 @@
   </main>
 
   <footer>
-    <img src="/images/wcag-aa.png" alt="WCAG 2.2 Nivel AA alcanzado" />
+    <img src="images/wcag-aa.png" alt="WCAG 2.2 Nivel AA alcanzado" />
     <p>&copy; 2025 Bernabéu Tours</p>
   </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
   <script src="script.js"></script>
 </body>
