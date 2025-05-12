@@ -25,38 +25,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-postal');
     const mensaje = document.getElementById('mensaje-postal');
   
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const img = formData.get('imagen');
-  
-      if (!img) {
-        mensaje.textContent = 'Por favor, selecciona una imagen.';
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const img = formData.get('imagen');
+    
+        if (!img) {
+          mensaje.textContent = 'Por favor, selecciona una imagen.';
+          mensaje.classList.remove('hidden');
+          return;
+        }
+        
+        mensaje.textContent = `¡Postal con la imagen "${img}" enviada con éxito!`;
         mensaje.classList.remove('hidden');
-        return;
-      }
-      
-      mensaje.textContent = `¡Postal con la imagen "${img}" enviada con éxito!`;
-      mensaje.classList.remove('hidden');
-    });
+      });
+    }
 
+    // Funcionalidad de mostrar/ocultar letra del himno - corregido
     const btnLetra = document.getElementById('mostrar-letra');
     const letraHimno = document.getElementById('letra-himno');
     
     if (btnLetra && letraHimno) {
-      letraHimno.classList.add('hidden');
+      // Asegurar que la letra esté oculta inicialmente
+      if (!letraHimno.classList.contains('hidden')) {
+        letraHimno.classList.add('hidden');
+      }
       
-      btnLetra.addEventListener('click', () => {
-        const isHidden = letraHimno.classList.contains('hidden');
-        
-        if (isHidden) {
+      btnLetra.addEventListener('click', function() {
+        if (letraHimno.classList.contains('hidden')) {
           letraHimno.classList.remove('hidden');
-          btnLetra.textContent = 'Ocultar letra del himno';
-          btnLetra.setAttribute('aria-expanded', 'true');
+          this.textContent = 'Ocultar letra del himno';
+          this.setAttribute('aria-expanded', 'true');
         } else {
           letraHimno.classList.add('hidden');
-          btnLetra.textContent = 'Mostrar letra del himno';
-          btnLetra.setAttribute('aria-expanded', 'false');
+          this.textContent = 'Mostrar letra del himno';
+          this.setAttribute('aria-expanded', 'false');
         }
       });
     }
