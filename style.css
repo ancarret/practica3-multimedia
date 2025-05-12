@@ -68,12 +68,12 @@ section {
     overflow: auto;
 }
 
-.hidden {
-    display: none !important;
-}
-
 section.active {
     display: block;
+}
+
+.hidden {
+    display: none !important;
 }
 
 :focus {
